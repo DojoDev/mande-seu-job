@@ -17,4 +17,32 @@ Route::get('/', function () {
 
 Auth::routes();
 
+/*Route::group(['middleware' => 'auth','prefix' => 'admin'], function () {
+    
+    Route::get('/', 'Admin\AdminController@index');
+
+    Route::resource('users', 'Admin\UserController');
+
+    Route::get('users/paper/{id}', ['as'=>'users.paper','uses'=>'Admin\UserController@paper']);
+    Route::post('users/paper/{paper}', ['as'=>'users.paper.store','uses'=>'Admin\UserController@paperStore']);
+    Route::delete('users/paper/{user}/{paper}', ['as'=>'users.paper.destroy','uses'=>'Admin\UserController@paperDestroy']);
+
+    Route::resource('papers', 'Admin\PaperController');
+
+    Route::get('papers/permission/{id}', ['as'=>'users.permission','uses'=>'Admin\PaperController@permission']);
+    Route::post('papers/permission/{paper}', ['as'=>'users.permission.store','uses'=>'Admin\PaperController@permissionStore']);
+    Route::delete('papers/permission/{paper}/{permission}', ['as'=>'users.permission.destroy','uses'=>'Admin\PaperController@permissionDestroy']);
+
+    Route::get('/', 'AlbumsController@index');
+    Route::get('/albums', 'AlbumsController@index');
+    Route::post('/albums/create', 'AlbumsController@create');
+  
+    
+    
+    
+    });
+*/
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/albums', 'AlbumsController@index');
+Route::get('/albums/create', 'AlbumsController@create');
+Route::post('/albums/store', 'AlbumsController@store');
