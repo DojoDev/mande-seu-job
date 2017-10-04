@@ -1,12 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-  <h3>Upload Photo</h3>
-  {!!Form::open(['action' => 'PhotosController@store','method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
-    {{Form::text('title','',['placeholder' => 'Photo Title'])}}
-    {{Form::textarea('description','',['placeholder' => 'Photo Description'])}}
+<div class="container">
+<h3>Upload Photo</h3>
+{!!Form::open(['action' => 'PhotosController@store','method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
+  {{Form::text('title','',['placeholder' => 'Photo Title', 'class'=>'form-control'])}}
+    <br>
+    {{Form::textarea('description','',['placeholder' => 'Photo Description', 'class'=>'form-control'])}}
+    <br>
     {{Form::hidden('album_id', $album_id)}}
+    <br>
     {{Form::file('photo')}}
-    {{Form::submit('submit')}}
-  {!! Form::close() !!}
+    <br>
+  {{Form::submit('submit',['class'=>'btn btn-success btn-large'])}}
+{!! Form::close() !!}
+</div>
 @endsection

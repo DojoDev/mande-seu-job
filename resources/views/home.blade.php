@@ -19,7 +19,7 @@
             <h3>FAQ</h3>
             <b>Perguntas frequentes</b>
             <hr>
-            <a href="{{url('/home')}}" class="btn btn-success btn-block">VER PERGUNTAS</a>
+            <a href="{{url('/faqs')}}" class="btn btn-success btn-block">VER PERGUNTAS</a>
             </div>
 
             <div class="col-md-5 alert alert-success">

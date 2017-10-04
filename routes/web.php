@@ -43,11 +43,16 @@ Auth::routes();
     });
 */
 Route::get('/home', 'HomeController@index')->name('home');
+//ALBUMS
 Route::get('/albums', 'AlbumsController@index');
 Route::get('/albums/create', 'AlbumsController@create');
 Route::post('/albums/store', 'AlbumsController@store');
 Route::get('/albums/{id}', 'AlbumsController@show');
-
+//FAQ
+Route::get('/faqs', 'FaqsController@index');
+Route::get('/faqs/create', 'FaqsController@create');
+Route::post('/faqs/store', 'FaqsController@store');
+//PHOTOS
 Route::get('/photos/create/{id}', 'PhotosController@create');
 Route::post('/photos/store', 'PhotosController@store');
 Route::get('/photos/{id}', 'PhotosController@show');
