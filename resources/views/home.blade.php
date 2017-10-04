@@ -2,21 +2,41 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<div class="panel panel-default" style="text-align:center;">
+    <div class="panel-heading">Sistema para Solicitação e Acompanhamento de Jobs
+</div>
 
-                    You are logged in!
-                </div>
+        <div class="panel-body">
+            <div class="col-md-5 alert alert-success">
+            <h3>PERFIL</h3>
+            <b>Editar Perfil e Senha</b>
+            <hr>
+            <a href="{{url('/home')}}" class="btn btn-success btn-block">Visualizar Arquivos</a>
             </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 alert alert-success">
+            <h3>FAQ</h3>
+            <b>Perguntas frequentes</b>
+            <hr>
+            <a href="{{url('/home')}}" class="btn btn-success btn-block">VER PERGUNTAS</a>
+            </div>
+
+            <div class="col-md-5 alert alert-success">
+            <h3>MANDE SEU JOB</h3>
+            <b>Envie Seu Job</b>
+            <hr>
+            <a href="{{url('/home')}}" class="btn btn-success btn-block">Enviar Job Agora</a>
+            </div>
+
+            <div class="col-md-2"></div>
+            <div class="col-md-5 alert alert-success">
+            <h3>MEUS ARQUIVOS</h3>
+            <b>Arquivos de Post e Artes</b>
+            <hr>
+            <a href="{{url('/albums')}}" class="btn btn-success btn-block">Visualizar Arquivos</a>
+            </div>
+
         </div>
     </div>
 </div>

@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -29,14 +30,16 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Mande Seu job') }}
+                    <i class="fa fa-cloud-upload fa-1x"></i> Mande Seu job
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/albums') }}">Albums</a></li>
+                    <li><a href="{{ url('/albums/create') }}">Create A New Album</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -70,9 +73,11 @@
                 </div>
             </div>
         </nav>
-        @include('inc.messages')
-
+        <div class="container"> 
+         @include('inc.messages')
+        </div>
         @yield('content')
+      
     </div>
 
     <!-- Scripts -->
