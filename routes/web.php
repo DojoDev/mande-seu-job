@@ -43,6 +43,11 @@ Auth::routes();
     });
 */
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/roles-permissions', 'HomeController@rolesPermissions');
+Route::post('/register', 'HomeController@register');
+//POSTS
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/{id}/post-update', 'PostsController@update');
 //ALBUMS
 Route::get('/albums', 'AlbumsController@index');
 Route::get('/albums/create', 'AlbumsController@create');
