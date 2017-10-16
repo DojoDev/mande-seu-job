@@ -26,7 +26,7 @@
             <h3>MANDE SEU JOB</h3>
             <b>Envie Seu Job</b>
             <hr>
-            <a href="{{url('/home')}}" class="btn btn-success btn-block">Enviar Job Agora</a>
+            <a href="{{url('/new_ticket')}}" class="btn btn-success btn-block">Mande Seu Job Agora</a>
             </div>
 
             <div class="col-md-2"></div>
