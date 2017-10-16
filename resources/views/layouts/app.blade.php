@@ -43,9 +43,9 @@
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Entrar</a></li>
-                            @can('edit_post')
+                           
                             <li><a href="{{ route('register') }}">Registrar</a></li>
-                            @endcan
+                      
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
