@@ -8,6 +8,7 @@
     ?>
     <div id="albums" class="container" style="text-align:center;">
         @foreach($albums as $album)
+        @can('view-album', $album)
           @if($i == $colcount)
           <div class="col-xs-5 col-md-4">
           <a class="thumbnail" href="/albums/{{$album->id}}">
@@ -15,6 +16,7 @@
           </a>
           <h4>{{$album->name}}</h4>
           </div>
+          @endcan
           @else
           <div class="col-xs-5 col-md-4">
             <a class="thumbnail" href="/albums/{{$album->id}}">

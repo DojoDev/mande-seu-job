@@ -13,6 +13,7 @@
       $colcount = count($album->photos);
   	  $i = 1;
     ?>
+    
     <div id="photos" style="text-align:center;" class="container">
       <div class="row">
         @foreach($album->photos as $photo)
@@ -45,4 +46,5 @@
     <b>NENHUMA ARTE PARA SEU ALBÚM</b>
   @endif
   </div>
+
 @endsection

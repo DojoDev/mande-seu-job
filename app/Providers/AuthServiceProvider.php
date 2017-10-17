@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use App\Post;
 use App\User;
 use App\Permission;
+use App\Album;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
 
-       // 'App\Model' => 'App\Policies\ModelPolicy',
+       'App\Album' => 'App\Policies\AlbumPolicy',
     ];
 
     /**
@@ -27,6 +28,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+       
       
         $this->registerPolicies();
         $permissions = Permission::with('roles')->get();
@@ -37,7 +39,8 @@ class AuthServiceProvider extends ServiceProvider
                  });
 
         }
-      
+
+        
 
      
      Gate::before(function(User $user,$ability){
