@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Album;
+use App\User;
 
 class AlbumsController extends Controller
 {
@@ -15,15 +16,18 @@ class AlbumsController extends Controller
 
     public function create()
     {
-        return view('albums.create');
+        $users = User::all();
+        return view('albums.create', compact('users'));
 
     }
 
     public function store(Request $request){
         $this->validate($request, [
           'name' => 'required',
-          'cover_image' => 'image|max:1999'
+          'cover_image' => 'mimes:jpeg,bmp,png,gif,svg,pdf,psd,gif','max:1999',
         ]);
+
+
   
         // Get filename with extension
         $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
@@ -43,6 +47,7 @@ class AlbumsController extends Controller
         // Create album
         $album = new Album;
         $album->name = $request->input('name');
+        $album->user_id = $request->input('user');
         $album->description = $request->input('description');
         $album->cover_image = $filenameToStore;
 

@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->belongsToMany(\App\Role::class);
     }
 
+   
+    public function album(){
+        return $this->belongsTo('App\Album');
+      }
+
     public function hasPermission(Permission $permission)
     {
         return $this->hasAnyRoles($permission->roles);

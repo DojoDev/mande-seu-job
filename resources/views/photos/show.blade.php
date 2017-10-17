@@ -17,7 +17,7 @@
     {{Form::submit('Delete Photo', ['class' => 'button alert'])}}
   {!!Form::close()!!}
   @endcan 
-  <a class="btn btn-warning btn-block" href="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" download="{{$photo->photo}}.jpg">Download <i class="fa fa-download" aria-hidden="true"></i></a>
+  <a class="btn btn-warning btn-block" href="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" download="{{$photo->photo}}">Download <i class="fa fa-download" aria-hidden="true"></i></a>
   <hr>
   <small>Size: {{$photo->size}}</small>[
 <h1>Olá Mundo!</h1>

@@ -40,7 +40,7 @@
                             <label for="priority" class="col-md-4 control-label">Arquivo Modelo</label>
 
                             <div class="col-md-6">
-                            {{Form::file('priority')}}
+                            <input name="myFile" type="file" name="priority">
                             @if ($errors->has('priority'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('priority') }}</strong>
