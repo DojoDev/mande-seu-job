@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Ticket;
 use App\Categorie;
 use App\User;
+use App\Mailers\AppMailer;
 
 class TicketsController extends Controller
 {
@@ -25,7 +26,7 @@ public function create()
       return view('tickets.create', compact('categories'));
   }
 
-public function store(Request $request){
+public function store(Request $request, AppMailer $mailer){
       $this->validate($request, [
         'title'       => 'required',
         'categorie'   => 'required',
@@ -60,9 +61,9 @@ public function store(Request $request){
       
 
 
-      $ticket->save();
-    
-            //$mailer->sendTicketInformation(Auth::user(), $ticket);
+$ticket->save();
+$mailer->sendTicketInformation(Auth::user(), $ticket);
+
 return redirect()->back()->with("status", "Numero do Seu Job ID: #$ticket->ticket_id");
     }
 
