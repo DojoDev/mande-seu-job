@@ -21,6 +21,8 @@ class AlbumPolicy
         //
     }
 
+    
+
     public function viewAlbum($user, Album $album)
     {
 

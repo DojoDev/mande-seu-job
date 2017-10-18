@@ -46,6 +46,7 @@ Auth::routes();
 //TICKETS
 Route::get('new_ticket', 'TicketsController@create');
 Route::post('new_ticket', 'TicketsController@store');
+Route::post('new_ticket/show', 'TicketsController@show');
 //HOME
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/roles-permissions', 'HomeController@rolesPermissions');

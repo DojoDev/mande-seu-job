@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->belongsToMany(\App\Role::class);
     }
 
+    public function isSuperAdmin()
+    {
+        return $this->id ==1;
+    }
+
    
     public function album(){
         return $this->belongsTo('App\Album');

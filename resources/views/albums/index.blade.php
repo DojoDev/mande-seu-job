@@ -16,7 +16,7 @@
           </a>
           <h4>{{$album->name}}</h4>
           </div>
-          @endcan
+      
           @else
           <div class="col-xs-5 col-md-4">
             <a class="thumbnail" href="/albums/{{$album->id}}">
@@ -25,6 +25,7 @@
               <h4>{{$album->name}}</h4>
           </div>
           @endif
+          @endcan
         	@if($i % 3 == 0)
          
 
