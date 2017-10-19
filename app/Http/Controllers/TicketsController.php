@@ -63,7 +63,7 @@ public function store(Request $request, AppMailer $mailer){
 
 $ticket->save();
 $mailer->sendTicketInformation(Auth::user(), $ticket);
-
+$mailer->sendTicketInformationOwner(Auth::user(), $ticket);
 return redirect()->back()->with("status", "Numero do Seu Job ID: #$ticket->ticket_id");
     }
 

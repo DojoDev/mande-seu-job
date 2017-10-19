@@ -28,6 +28,17 @@ class AppMailer {
         return $this->deliver();
     }
 
+    public function  sendTicketInformationOwner($user, Ticket $ticket)
+    {
+        $ticket_owner = Ticket::all();
+        $this->to ='rafael@agenciavirtude.com.br';
+        $this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->title";
+        $this->view = 'emails.ticket_info_owner';
+        $this->data = compact('user', 'ticket');
+
+        return $this->deliver();
+    }
+
     public function deliver()
     {
         $this->mailer->send($this->view, $this->data, function($message) {

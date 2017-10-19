@@ -5,10 +5,13 @@
     <title>Suport Mande Seu Job</title>
 </head>
 <body>
-<h2>Suporte Manda Seu job - Agência Virtude</h2>
-    <p>
-    Obrigado {{ucfirst($user->name)}} por entrar em contato com nossa equipe de suporte. <br>Foi aberto um ticket de suporte para você. Você será notificado quando uma resposta for feita por e-mail. Os detalhes do seu bilhete são mostrados abaixo:
-    </p>
+<div class="container">
+<h2>Olá, recebemos mais um pedido de {{ucfirst($user->name)}}</h2>
+   <small>{{$ticket->id}}</small>
+   <h3>{{$ticket->title}}</h3>
+   <small>{{$ticket->category_id}}</small>
+   <b>{{$ticket->message}}</b>
+</div>
 
     <p>Title: {{ $ticket->title }}</p>
     <p>Priority: {{ $ticket->priority }}</p>

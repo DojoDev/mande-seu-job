@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="text-align:center;">
 <h3>{{$photo->title}}</h3>
-  <p>{{$photo->description}}</p>
+   <!-- <p>{{$photo->description}}</p>  -->
   <a class="btn btn-info btn-large" href="/albums"><i class="fa fa-sign-out" aria-hidden="true"></i> Voltar Para Galeria</a>
   <hr>
 <div class="col-md-2"></div>
@@ -19,8 +19,7 @@
   @endcan 
   <a class="btn btn-warning btn-block" href="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" download="{{$photo->photo}}">Download <i class="fa fa-download" aria-hidden="true"></i></a>
   <hr>
-  <small>Size: {{$photo->size}}</small>[
-<h1>Olá Mundo!</h1>
+  <!-- <small>Size: {{$photo->size}}</small> -->
   </div>
 </div>
 <div class="col-md-2"></div>

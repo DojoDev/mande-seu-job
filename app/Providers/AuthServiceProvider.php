@@ -26,14 +26,24 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+     protected function getPermissions()
+     {
+         try {
+             
+             return Permission::with('roles')->get();
+
+         } catch (\Exception $e) {
+             return [];
+         }
+     }
     public function boot()
     {
        
       
         $this->registerPolicies();
-        $permissions = Permission::with('roles')->get();
 
-        foreach($permissions as $permission){
+        foreach($this->getPermissions() as $permission){
             Gate::define($permission->name, function(User $user) use($permission){
                  return $user->hasPermission($permission);
                  });
