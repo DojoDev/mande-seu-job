@@ -8,8 +8,7 @@
   <hr>
 <div class="col-md-2"></div>
 <div class="col-md-8">
-
-  <img class="img-responsive" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
+<img class="img-responsive" src="/storage/photos/{{$photo->album_id}}/{{$photo->photo}}" alt="{{$photo->title}}">
   <br><br>
   @can('edit_post')
   {!!Form::open(['action' => ['TicketsController@destroy', $ticket->id], 'method' => 'POST'])!!}
@@ -23,5 +22,4 @@
   </div>
 </div>
 <div class="col-md-2"></div>
-
 @endsection

@@ -31,7 +31,7 @@ public function store(Request $request, AppMailer $mailer){
         'title'       => 'required',
         'categorie'   => 'required',
         'message'     => 'required',
-        'document'    => 'mimes:jpeg,bmp,png,gif,svg,pdf,psd,gif','max:1999',
+        'document'    => 'mimes:jpeg,bmp,png,csv,svg,pdf,gif','max:1999',
       ]);
 
       // Get filename with extension
@@ -61,10 +61,10 @@ public function store(Request $request, AppMailer $mailer){
       
 
 
-$ticket->save();
-$mailer->sendTicketInformation(Auth::user(), $ticket);
-$mailer->sendTicketInformationOwner(Auth::user(), $ticket);
-return redirect()->back()->with("status", "Numero do Seu Job ID: #$ticket->ticket_id");
+      $ticket->save();
+      $mailer->sendTicketInformation(Auth::user(), $ticket);
+      $mailer->sendTicketInformationOwner(Auth::user(), $ticket);
+      return redirect()->back()->with("status", "Numero do Seu Job ID: #$ticket->ticket_id");
     }
 
     public function show($id){

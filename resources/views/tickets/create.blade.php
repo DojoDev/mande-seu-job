@@ -13,7 +13,7 @@
             @endforeach
     </select>
     <br>
-    {{Form::textarea('message','',['placeholder' => 'Photo Description', 'class'=>'form-control'])}}
+    {{Form::textarea('message','',['placeholder' => 'Descrição do Seu Job', 'class'=>'form-control'])}}
     <br>
     {{Form::file('document')}}
     <br>

@@ -8,6 +8,7 @@
 </div>
 
         <div class="panel-body">
+        @can('edit_post')
             <div class="col-md-5 alert alert-success">
             <h3>PERFIL</h3>
             <b>Editar Perfil e Senha</b>
@@ -21,7 +22,7 @@
             <hr>
             <a href="{{url('/faqs')}}" class="btn btn-success btn-block">VER PERGUNTAS</a>
             </div>
-
+            @endcan
             <div class="col-md-5 alert alert-success">
             <h3>MANDE SEU JOB</h3>
             <b>Envie Seu Job</b>
